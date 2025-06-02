@@ -51,39 +51,40 @@ const Landing = () => {
       <div className="staff-section">
         <div className="staff-container">
           <div className="staff-content">
-            <h2>Meet Our Staff</h2>
-            <p>Dedicated professionals ready to serve you.</p>
+            <div className="staff-header">
+              <h2 className="meet-header">Meet Our Staff</h2>
+              <p className="p-staff">
+                Dedicated professionals ready to serve you.
+              </p>
+            </div>
+
             <div className="staff-cards">
-              <div className="staff-card">
+              <div className="staff-card" id="staff-card-1">
                 <h3>John Doe</h3>
                 <p>Manager</p>
               </div>
-              <div className="staff-card">
+              <div className="staff-card" id="staff-card-2">
                 <h3>Jane Smith</h3>
                 <p>Chef</p>
               </div>
-              <div className="staff-card">
+              <div className="staff-card" id="staff-card-3">
                 <h3>Emily Johnson</h3>
                 <p>Cashier</p>
               </div>
             </div>
-
           </div>
         </div>
       </div>
-      
+
       <footer>
         <div className="footer-container">
-          <p>&copy; 2023 AUP Cafeteria. All rights reserved.</p>
+          <p>&copy; 2025 AUP Cafeteria. All rights reserved.</p>
           <div className="footer-links">
             <a href="#privacy">Privacy Policy</a>
             <a href="#terms">Terms of Service</a>
           </div>
         </div>
       </footer>
-
-
-
 
       <div className="navbar-mobile-screen">
         <Box sx={{ width: 500 }}>
