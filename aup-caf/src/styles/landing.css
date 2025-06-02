@@ -1,0 +1,50 @@
+.body {
+  background-image: url("../../public/bg.png");
+  background-size: cover;
+  background-attachment: fixed; /* Add this line */
+
+}
+
+/*for mobile and smaller screens */
+@media (max-width: 767px) {
+  .navbar-mobile-screen {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+    background: #fff; /* Optional: set background color */
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08); /* Optional: subtle shadow */
+  }
+  .navbar-lg-screen {
+    display: none;
+  }
+}
+/* 
+for desktop and larger screens */
+@media (min-width: 1025px) {
+  .navbar-lg-screen {
+    display: block;
+    width: 100vw;
+    left: 0;
+    right: 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .navbar-mobile-screen {
+    display: none;
+  }
+  .hero-section{
+    background-color: rgba(188, 180, 180, 0.1); /* semi-transparent black */
+  }
+  .hero-container {
+    margin: 0 4rem;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+}
