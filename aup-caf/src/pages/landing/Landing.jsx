@@ -34,7 +34,7 @@ const Landing = () => {
           <div className="hero-content">
             <h1>Welcome to AUP Cafeteria</h1>
             <p>Your one-stop solution for managing cafeteria services.</p>
-            <Button variant="primary" size="lg" href="#register">
+            <Button variant="primary" size="lg" href="/login">
               Get Started
             </Button>
           </div>

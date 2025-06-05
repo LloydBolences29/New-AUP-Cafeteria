@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/landing/Home";
 import Landing from "./pages/landing/Landing";
 import Login from "./pages/landing/Login";
+import Admin from "./pages/Admin/Admin";
 function App() {
   return (
     <>
@@ -12,6 +13,11 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
+
+        {/* Admin page */}
+        <Route path="/admin" element={<Admin />} />
+        
+        {/* Add more routes as needed */}
       </Routes>
       
       
