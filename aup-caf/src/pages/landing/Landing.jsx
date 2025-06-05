@@ -1,23 +1,15 @@
 import React from "react";
-import { useState } from "react";
+import BottomNav from "../../components/BottomNav";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Box from "@mui/material/Box";
-import BottomNavigation from "@mui/material/BottomNavigation";
-import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import RestoreIcon from "@mui/icons-material/Restore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 import "../../styles/landing.css";
 
 const Landing = () => {
-  const [value, setValue] = useState(0);
-
   return (
-    <div className="body">
+    <div>
       <div className="navbar-lg-screen">
         <Navbar expand="lg" className="bg-white">
           <Container fluid>
@@ -30,7 +22,7 @@ const Landing = () => {
                 navbarScroll
               >
                 <Nav.Link href="#action1">Register</Nav.Link>
-                <Nav.Link href="#action2">Login</Nav.Link>
+                <Nav.Link href="/login">Login</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -60,16 +52,28 @@ const Landing = () => {
 
             <div className="staff-cards">
               <div className="staff-card" id="staff-card-1">
-                <h3>John Doe</h3>
-                <p>Manager</p>
+                <div className="staff-info">
+                  <h3>John Doe</h3>
+                  <p>Manager</p>
+                </div>
               </div>
               <div className="staff-card" id="staff-card-2">
-                <h3>Jane Smith</h3>
-                <p>Chef</p>
+                <div className="staff-info">
+                  <h3>Jane Smith</h3>
+                  <p>Chef</p>
+                </div>
               </div>
               <div className="staff-card" id="staff-card-3">
-                <h3>Emily Johnson</h3>
-                <p>Cashier</p>
+                <div className="staff-info">
+                  <h3>Emily Johnson</h3>
+                  <p>Cashier</p>
+                </div>
+              </div>
+              <div className="staff-card" id="staff-card-4">
+                <div className="staff-info">
+                  <h3>Taha Davila</h3>
+                  <p>Server</p>
+                </div>
               </div>
             </div>
           </div>
@@ -86,21 +90,7 @@ const Landing = () => {
         </div>
       </footer>
 
-      <div className="navbar-mobile-screen">
-        <Box sx={{ width: 500 }}>
-          <BottomNavigation
-            showLabels
-            value={value}
-            onChange={(event, newValue) => {
-              setValue(newValue);
-            }}
-          >
-            <BottomNavigationAction label="Home" icon={<RestoreIcon />} />
-            <BottomNavigationAction label="Register" icon={<FavoriteIcon />} />
-            <BottomNavigationAction label="Login" icon={<LocationOnIcon />} />
-          </BottomNavigation>
-        </Box>
-      </div>
+      <BottomNav />
     </div>
   );
 };
