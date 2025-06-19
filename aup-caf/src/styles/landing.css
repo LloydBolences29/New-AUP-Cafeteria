@@ -78,7 +78,7 @@
     width: 100%;
   }
   #staff-card-1 {
-    background-image: url("../../public/chef1.png");
+    background-image: url("/public/chef1.png");
     background-size: cover;
   }
   #staff-card-2{
