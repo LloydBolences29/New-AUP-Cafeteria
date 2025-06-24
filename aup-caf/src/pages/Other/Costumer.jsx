@@ -25,7 +25,7 @@ const Costumer = () => {
             </div>
 
             <div className="settings">
-              <a href="">
+              <a clashref="">
                 <BsSliders color="white" size={18}/>
               </a>
               <a href="">
