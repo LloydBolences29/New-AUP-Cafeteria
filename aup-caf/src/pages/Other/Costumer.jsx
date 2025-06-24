@@ -1,6 +1,9 @@
 import React from "react";
 import BottomNav from "../../components/BottomNav";
 import "../../styles/Customer.css"; // Assuming you have a CSS file for styles
+import { BsSliders } from "react-icons/bs";
+import { BsArrowBarRight } from "react-icons/bs";
+
 
 const Costumer = () => {
   return (
@@ -12,20 +15,22 @@ const Costumer = () => {
               <img src="./profile.jpg" id="profile-picture" alt="Profile" />
             </div>
 
-            <div className="profile">
+            <div className="additional-profile">
               <div className="user-name">
                 <h1>Lloyd Matthew Bolences</h1>
               </div>
-              <div className="additional-info">
+              <div className="info">
                 <p>Student ID: 123456789</p>
-                <p>Course: Bachelor of Science in Computer Science</p>
-                <p>Year Level: 3rd Year</p>
               </div>
             </div>
 
             <div className="settings">
-              <button className="settings-button">Settings</button>
-              <button className="logout-button">Logout</button>
+              <a href="">
+                <BsSliders color="white" size={18}/>
+              </a>
+              <a href="">
+                <BsArrowBarRight color="white" size={18}/>
+              </a>
             </div>
           </div>
         </div>
