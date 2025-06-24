@@ -49,7 +49,7 @@ router.post("/login", async (req, res) => {
     const { email, password } = req.body;
     if (!email || !password) {
       return res.status(400).json({ error: "Email and password are required" });
-    } 
+    }
 
     //check if the user is already existing
     const existingUser = await connectToDatabase().then((db) =>
@@ -58,7 +58,7 @@ router.post("/login", async (req, res) => {
     if (existingUser[0].length === 0) {
       return res
         .status(401)
-        .json({ error: `Email doesn't exist in our records!! ` });
+        .json({ error: `Email doesn't exist in our records!!` });
     }
 
     //check if the password is correct
@@ -110,7 +110,7 @@ router.get("/auth", async (req, res) => {
   try {
 
     console.log("Checking authentication...", req.cookies)
-    const token = req.cookies.cookie; // Assuming the JWT is stored in a cookie named 'token'
+    const token = req.cookies.token; // Assuming the JWT is stored in a cookie named 'token'
     if (!token) {
       return res.status(401).json({ error: "Unauthorized" });
     }

@@ -1,21 +1,46 @@
 import React from "react";
-import "../styles/Header.css";
-
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import { useAuth } from "../util/AuthContext";
 
 const Header = () => {
+  const { auth } = useAuth();
   return (
-    <div className="body">
-      <nav className="bg-white shadow-md ">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 nav-container">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <div className="text-2xl font-bold text-gray-800 nav-wrapper">
-                <h1 ><a className="header-title" href="/">AUP CAFETERIA</a></h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+    <div>
+      <div className="navbar-lg-screen">
+        <Navbar expand="lg" className="bg-white">
+          <Container fluid>
+            <Navbar.Brand href="#">AUP Cafeteria</Navbar.Brand>
+            <Navbar.Toggle aria-controls="navbarScroll" />
+            <Navbar.Collapse id="navbarScroll">
+              <Nav
+                className="me-auto my-2 my-lg-0"
+                style={{ maxHeight: "100px" }}
+                navbarScroll
+              >
+                <Nav.Link href="/menu">Menu</Nav.Link>
+                {auth.isAuthenticated ? (
+                  <>
+                    
+                    {auth.user === "admin" ? (
+                      <Nav.Link href="/admin">Admin Profile</Nav.Link>
+                    ) : auth.user === "customer" ? (
+                      <Nav.Link href="/customer">My Profile</Nav.Link>
+                    ) : null}
+                  </>
+                ) : (
+                  <>
+                    {" "}
+                    <Nav.Link href="/login">Register/Login</Nav.Link>
+                  </>
+                )}
+               
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+      </div>
     </div>
   );
 };

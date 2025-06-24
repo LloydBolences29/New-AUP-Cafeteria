@@ -10,8 +10,6 @@ import { FaEyeSlash } from "react-icons/fa";
 import Modal from "react-bootstrap/Modal";
 import Lottie from "lottie-react";
 import successCheck from "../../assets/Animation - 1750345867222.json";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../util/AuthContext";
 import axios from "axios";
 
 const Login = () => {
@@ -36,11 +34,6 @@ const Login = () => {
   const [showModal, setShowModal] = useState(false);
   const [modalTimer, setModalTimer] = useState(3);
   const [modalMessage, setModalMessage] = useState("");
-
-  const navigate = useNavigate();
-  const { setAuth } = useAuth();
-
-
 
   const handleStatusChange = (status) => {
     setSelectedStatus(status);
@@ -70,31 +63,13 @@ const Login = () => {
         }
       );
 
-      setAuth({
-        loading: false,
-        isAuthenticated: true,
-        user: response.data,
-      });
-
-      // Redirect based on role
-      switch (response.data.role) {
-        case 'admin':
-          navigate('/admin');
-          break;
-        case 'staff':
-          navigate('/staff');
-          break;
-        case 'customer':
-          navigate('/customer');
-          break;
-        default:
-          navigate('/');
-      }
-
       // Success response (you can handle it however you like)
       console.log("Login response:", response.data);
       setShowModal(true);
 
+      // Optionally: save user data to context or redirect
+      // setUser(response.data.user);
+      // navigate("/dashboard");
     } catch (error) {
       console.error("Login error:", error);
 
