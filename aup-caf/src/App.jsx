@@ -10,6 +10,7 @@ import Customer from "./pages/Other/Costumer";
 import Menu from "./pages/landing/Menu";
 import { AuthProvider } from "./util/AuthContext";
 import ProtectedRoute from "./util/ProtectedRoutes";
+import Settings from "./pages/Other/Settings";
 function App() {
   return (
     <AuthProvider>
@@ -31,6 +32,9 @@ function App() {
         {/* Costumer routes */}
          <Route element={<ProtectedRoute allowedRoles={["customer"]} />}>
           <Route path="/customer" element={<Customer />} />
+        </Route>
+         <Route element={<ProtectedRoute allowedRoles={["customer"]} />}>
+          <Route path="/settings" element={<Settings />} />
         </Route>
         
       </Routes>

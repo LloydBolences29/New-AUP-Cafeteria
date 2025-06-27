@@ -4,11 +4,11 @@ import "../../styles/Customer.css"; // Assuming you have a CSS file for styles
 import { BsSliders } from "react-icons/bs";
 import { BsArrowBarRight } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
-
+import { Container, Card } from "react-bootstrap";
 
 const Costumer = () => {
   const navigate = useNavigate();
-const handleLogout = async () => {
+  const handleLogout = async () => {
     try {
       const response = await fetch("http://localhost:4000/logout/logout", {
         method: "POST",
@@ -24,7 +24,11 @@ const handleLogout = async () => {
     } catch (error) {
       console.error("Error logging out:", error);
     }
-}
+  };
+
+  const handleSettings = () => {
+    navigate("/settings");
+  };
 
   return (
     <div>
@@ -45,13 +49,46 @@ const handleLogout = async () => {
             </div>
 
             <div className="settings">
-              <a href="/">
-                <BsSliders color="white" size={18}/>
-              </a>
-              
-                <BsArrowBarRight onClick={handleLogout} color="white" size={18}/>
-              
+              <BsSliders
+                className="icon"
+                onClick={handleSettings}
+                color="white"
+                size={18}
+              />
+
+              <BsArrowBarRight
+                className="icon"
+                onClick={handleLogout}
+                color="white"
+                size={18}
+              />
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="utilityContainer">
+        <div className="utilityWrapper">
+          <div className="utility">
+         
+              <Card
+                className="utilityCard"
+                onClick={() => navigate("/settings")}
+              >
+                <h2>Orders</h2>
+              </Card>
+              <Card
+                className="utilityCard"
+                onClick={() => navigate("/settings")}
+              >
+                <h2>Favorites</h2>
+              </Card>
+              <Card
+                className="utilityCard"
+                onClick={() => navigate("/settings")}
+              >
+                <h2>Address</h2>
+              </Card>
+            
           </div>
         </div>
       </div>

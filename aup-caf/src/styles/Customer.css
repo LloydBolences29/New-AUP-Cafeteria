@@ -42,7 +42,7 @@
   padding: 0.5rem 1rem;
 }
 
-.settings a {
+.icon {
   margin: 0 0.2em;
 }
 .info {
@@ -60,4 +60,17 @@
   height: 9vh;
   border-radius: 100%;
   border: 1px solid #000;
+}
+
+.utility {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 2rem 1.5rem;
+}
+
+.utilityCard {
+padding: 0.5rem;
 }
